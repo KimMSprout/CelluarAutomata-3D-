@@ -31,6 +31,9 @@ public class MapGenerator : MonoBehaviour
     public Camera mainCamera;
     public float cameraPadding = 1.1f;
 
+    [Range(0.5f, 3f)]
+    public float cameraZoom = 1.3f;
+    
     private void Start()
     {
         RegenerateMap();
@@ -301,5 +304,20 @@ public class MapGenerator : MonoBehaviour
         // 아래쪽을 바라보도록 회전
         mainCamera.transform.rotation =
             Quaternion.Euler(90f, 0f, 0f);
+        
+        mainCamera.orthographic = true;
+
+        float aspect = mainCamera.aspect;
+
+        float verticalSize = height / 2f;
+        float horizontalSize = width / (2f * aspect);
+
+        float baseSize =
+            Mathf.Max(verticalSize, horizontalSize)
+            * cameraPadding;
+
+        // 1.3이면 기본 화면보다 약 1.3배 확대
+        mainCamera.orthographicSize =
+            baseSize / cameraZoom;
     }
 }

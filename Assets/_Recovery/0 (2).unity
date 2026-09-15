@@ -149,16 +149,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapGenerator
   width: 200
-  height: 120
+  height: 200
   seed: 
   useRandomSeed: 1
-  randomFillPercent: 61
-  repeatCount: 10
+  randomFillPercent: 58
+  repeatCount: 7
   delayTime: 1
   _cellPrefab: {fileID: 3831492163904791111, guid: 2239e34108251714fa70d2723f178155, type: 3}
   mainCamera: {fileID: 0}
   cameraPadding: 1.2
-  cameraZoom: 1.16
 --- !u!4 &106309188
 Transform:
   m_ObjectHideFlags: 0
